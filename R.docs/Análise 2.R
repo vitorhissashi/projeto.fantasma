@@ -8,6 +8,7 @@ library(readr)
 
 banco_final %>% 
   filter(format == "Serie") %>% 
+  filter(season %in% c("1","2","3","4")) %>% 
   group_by(season,imdb,format) %>% 
   ggplot(aes(x=season , y=imdb) )+
   geom_boxplot(fill = c("#A11D21"), width = 0.5)+
